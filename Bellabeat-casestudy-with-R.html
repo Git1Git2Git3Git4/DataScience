@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>bellabeat casestudy</title>
+
+<script src="Bellabeat-casestudy-with-R_files/header-attrs-2.21/header-attrs.js"></script>
+<script src="Bellabeat-casestudy-with-R_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Bellabeat-casestudy-with-R_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Bellabeat-casestudy-with-R_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Bellabeat-casestudy-with-R_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Bellabeat-casestudy-with-R_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="Bellabeat-casestudy-with-R_files/navigation-1.1/tabsets.js"></script>
+<link href="Bellabeat-casestudy-with-R_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Bellabeat-casestudy-with-R_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">bellabeat casestudy</h1>
+
+</div>
+
+
+<div id="summary" class="section level1">
+<h1>summary</h1>
+<p>Bellatbeat, a high-tech company that manufactres health-focused smart
+products for women. Bellabeat is a successful small company, but they
+have the potential to become a larger player in the global smart device
+market Urška Sršen, cofounder and Chief Creative Officer of Bellabeat,
+believes that analyzing smart device fitness data could help unlock new
+growth opportunities for the company.</p>
+</div>
+<div id="ask" class="section level1">
+<h1>1.Ask</h1>
+<ul>
+<li><p>what are some trends in smart device usage?</p></li>
+<li><p>How could these trends apply to Bellabeat customers?</p></li>
+<li><p>How could these trends help influence Bellabeat marketing
+strategy?</p></li>
+</ul>
+<p><strong>Stakeholders</strong></p>
+<ul>
+<li><p>Urška Sršen - Bellabeat cofounder and Chief Creative
+Officer</p></li>
+<li><p>Sando Mur - Bellabeat cofounder and key member of Bellabeat
+executive team</p></li>
+<li><p>Bellabeat Marketing Analytics team</p></li>
+</ul>
+</div>
+<div id="prepare" class="section level1">
+<h1>2. Prepare</h1>
+<p><strong>about data</strong></p>
+<ul>
+<li>The data set is from Fitbit Fitness Tracker Data. The data contains
+personal fitness tracker from thirty fitbit users, including output for
+physical activity, heart rate, and sleep monitoring. It inlcudes
+information about daily activity, steps, and herat rate that can be used
+to explore user’s habits.</li>
+</ul>
+</div>
+<div id="process" class="section level1">
+<h1>3. Process</h1>
+<ul>
+<li><p>considering accessibility, amount of data and various
+visualization, I will use R to analyze the data</p></li>
+<li><p>Installing Packages and Opening Libraries</p></li>
+</ul>
+<pre class="r"><code>library(tidyverse)
+library(skimr)
+library(janitor)
+library(dplyr)
+library(lubridate)</code></pre>
+<p>importing Dataset daily activity, daily calories, hourly steps, daily
+intensities, daily sleep and weight info</p>
+<pre class="r"><code>activity &lt;- read_csv(&quot;Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv&quot;)
+Calories &lt;- read.csv(&quot;Fitabase Data 4.12.16-5.12.16/dailyCalories_merged.csv&quot;)
+hourly_steps &lt;- read.csv(&quot;Fitabase Data 4.12.16-5.12.16/hourlySteps_merged.csv&quot;)
+intensities &lt;- read.csv(&quot;Fitabase Data 4.12.16-5.12.16/dailyintensities_merged.csv&quot;)
+sleep &lt;- read.csv(&quot;Fitabase Data 4.12.16-5.12.16/sleepDay_merged.csv&quot;)
+weight &lt;- read.csv(&quot;Fitabase Data 4.12.16-5.12.16/weightLogInfo_merged.csv&quot;)</code></pre>
+<p>checking sample size by participants ID</p>
+<pre class="r"><code>n_distinct(activity$Id)
+n_distinct(Calories$Id)
+n_distinct(sleep$Id)
+n_distinct(weight$Id)
+n_distinct(hourly_steps$Id)</code></pre>
+<p>33</p>
+<p>33</p>
+<p>24</p>
+<p>8</p>
+<p>33</p>
+<p>because the sample size of Weight data is too small for minimum of
+30, I’ll exclude the dataset for later analyze. For the sleep data, i
+will still keep the dataset but low validity compare to other
+datasets.</p>
+<p>checking data columns</p>
+<pre class="r"><code>colnames(activity)
+colnames(intensities)
+colnames(sleep)
+colnames(hourly_steps)</code></pre>
+<p>Changing Date format and dropping redundant columns</p>
+<pre class="r"><code>hourly_steps &lt;- hourly_steps %&gt;%  separate(ActivityHour, c(&quot;Date&quot;, &quot;Hour&quot;), sep = &#39; &#39;)
+activity &lt;- subset(activity, select= -c(SedentaryActiveDistance, LoggedActivitiesDistance))</code></pre>
+<p>let’s have statistic summary tables</p>
+<pre class="r"><code>#summarizing data
+#Activity
+activity %&gt;%  select(TotalSteps, TotalDistance, VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes, Calories, ActivityDate) %&gt;% drop_na() %&gt;% summary()</code></pre>
+<pre><code>##    TotalSteps    TotalDistance    VeryActiveMinutes FairlyActiveMinutes
+##  Min.   :    0   Min.   : 0.000   Min.   :  0.00    Min.   :  0.00     
+##  1st Qu.: 3790   1st Qu.: 2.620   1st Qu.:  0.00    1st Qu.:  0.00     
+##  Median : 7406   Median : 5.245   Median :  4.00    Median :  6.00     
+##  Mean   : 7638   Mean   : 5.490   Mean   : 21.16    Mean   : 13.56     
+##  3rd Qu.:10727   3rd Qu.: 7.713   3rd Qu.: 32.00    3rd Qu.: 19.00     
+##  Max.   :36019   Max.   :28.030   Max.   :210.00    Max.   :143.00     
+##  LightlyActiveMinutes SedentaryMinutes    Calories    ActivityDate      
+##  Min.   :  0.0        Min.   :   0.0   Min.   :   0   Length:940        
+##  1st Qu.:127.0        1st Qu.: 729.8   1st Qu.:1828   Class :character  
+##  Median :199.0        Median :1057.5   Median :2134   Mode  :character  
+##  Mean   :192.8        Mean   : 991.2   Mean   :2304                     
+##  3rd Qu.:264.0        3rd Qu.:1229.5   3rd Qu.:2793                     
+##  Max.   :518.0        Max.   :1440.0   Max.   :4900</code></pre>
+<pre class="r"><code>#Calories
+Calories %&gt;%  select(Calories) %&gt;% drop_na() %&gt;% summary()</code></pre>
+<pre><code>##     Calories   
+##  Min.   :   0  
+##  1st Qu.:1828  
+##  Median :2134  
+##  Mean   :2304  
+##  3rd Qu.:2793  
+##  Max.   :4900</code></pre>
+<pre class="r"><code>#Sleep
+sleep %&gt;% select(TotalSleepRecords, TotalMinutesAsleep, TotalTimeInBed) %&gt;% drop_na() %&gt;% summary()</code></pre>
+<pre><code>##  TotalSleepRecords TotalMinutesAsleep TotalTimeInBed 
+##  Min.   :1.000     Min.   : 58.0      Min.   : 61.0  
+##  1st Qu.:1.000     1st Qu.:361.0      1st Qu.:403.0  
+##  Median :1.000     Median :433.0      Median :463.0  
+##  Mean   :1.119     Mean   :419.5      Mean   :458.6  
+##  3rd Qu.:1.000     3rd Qu.:490.0      3rd Qu.:526.0  
+##  Max.   :3.000     Max.   :796.0      Max.   :961.0</code></pre>
+<p>Create some new data frames before get in to Analyze</p>
+<pre class="r"><code>#on average, during which hour of the day were the most steps taken? 
+hourly_steps %&gt;% group_by(Hour) %&gt;% summarize(mean_steps = mean(StepTotal)) %&gt;% select(Hour, mean_steps) %&gt;% arrange(desc(mean_steps)) %&gt;%  head(5)</code></pre>
+<pre><code>## # A tibble: 5 × 2
+##   Hour     mean_steps
+##   &lt;chr&gt;         &lt;dbl&gt;
+## 1 7:00:00        443.
+## 2 8:00:00        391.
+## 3 6:00:00        386.
+## 4 9:00:00        372.
+## 5 10:00:00       361.</code></pre>
+<pre class="r"><code>mean_steps &lt;- hourly_steps %&gt;% group_by(Hour) %&gt;% summarize(mean_steps = mean(StepTotal)) %&gt;% select(Hour, mean_steps) %&gt;% arrange(desc(mean_steps)) %&gt;% as.data.frame
+head(mean_steps)</code></pre>
+<pre><code>##       Hour mean_steps
+## 1  7:00:00   442.8329
+## 2  8:00:00   391.2259
+## 3  6:00:00   385.9766
+## 4  9:00:00   371.6062
+## 5 10:00:00   361.4883
+## 6 12:00:00   293.7780</code></pre>
+<pre class="r"><code>#average amount of sleep for each participant 
+mean_sleep &lt;- sleep %&gt;% group_by(Id) %&gt;%  summarize(mean_sleep = mean(TotalMinutesAsleep)) %&gt;% select(Id, mean_sleep)
+head(mean_sleep)</code></pre>
+<pre><code>## # A tibble: 6 × 2
+##           Id mean_sleep
+##        &lt;dbl&gt;      &lt;dbl&gt;
+## 1 1503960366       360.
+## 2 1644430081       294 
+## 3 1844505072       652 
+## 4 1927972279       417 
+## 5 2026352035       506.
+## 6 2320127002        61</code></pre>
+</div>
+<div id="analyze-visualize" class="section level1">
+<h1>4. Analyze &amp; Visualize</h1>
+<p><strong>Findings from the summary</strong></p>
+<ul>
+<li><p>Daily average sedentary time is 991 minutes (16.5hour).</p></li>
+<li><p>Daily average steps taken: 7638.</p></li>
+<li><p>In average, participants spends 458 minutes(7.6hours) time in bed
+and 419minute(7hour) for actual sleep.</p></li>
+<li><p>Most of the participants are lightly active</p></li>
+</ul>
+<p>What time in a day participants are most active?</p>
+<pre class="r"><code>#average steps per hour 
+ggplot(mean_steps, aes(x= Hour, y= mean_steps)) + 
+  geom_col(aes(reorder(Hour, +mean_steps), mean_steps))+
+  theme(axis.text.x = element_text(angle=90))+  
+  labs(title = &quot; Average steps taken per hour of day &quot;)</code></pre>
+<p><img src="Bellabeat-casestudy-with-R_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>The graph shows that on average, participants are active between
+6:00~9:00pm</p>
+<pre class="r"><code>#aeverage munutes of sleep 
+ggplot(mean_sleep, aes(x = Id, y = mean_sleep)) + 
+geom_col(aes(reorder(Id, + mean_sleep), y = mean_sleep)) + 
+labs(title = &quot;Average Minutes of Sleep&quot;) + 
+theme(axis.text.x =  element_text(angle = 90)) +
+geom_hline(yintercept = mean(mean_sleep$mean_sleep), color = &quot;red&quot;)</code></pre>
+<p><img src="Bellabeat-casestudy-with-R_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>box plot for average steps per day</p>
+<pre class="r"><code>ggplot(data=activity, aes(x = TotalSteps)) + geom_boxplot()</code></pre>
+<p><img src="Bellabeat-casestudy-with-R_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>activity %&gt;% select(TotalSteps) %&gt;% summary()</code></pre>
+<pre><code>##    TotalSteps   
+##  Min.   :    0  
+##  1st Qu.: 3790  
+##  Median : 7406  
+##  Mean   : 7638  
+##  3rd Qu.:10727  
+##  Max.   :36019</code></pre>
+<p>Daily average steps is 7638 and in range of 4000 to 11000 steps per
+day</p>
+<p>Let’s find out correlation between steps and calories</p>
+<pre class="r"><code>ggplot(data=activity, aes(x=TotalSteps, y=Calories)) + geom_point()+ geom_smooth(color = &quot;red&quot;) + labs(title = &quot;total steps vs calories&quot;)</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="Bellabeat-casestudy-with-R_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>correlation &lt;- activity %&gt;% select(TotalSteps, Calories) %&gt;% drop_na() %&gt;% summarize(correlation = cor(TotalSteps, Calories)) 
+print(correlation)</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   correlation
+##         &lt;dbl&gt;
+## 1       0.592</code></pre>
+<p>The result shows that correlation value for Total steps and Calories
+is 0.592 which is strong correlation</p>
+</div>
+<div id="conclusion" class="section level1">
+<h1>5. Conclusion</h1>
+<ol style="list-style-type: decimal">
+<li><p>we found that majority of the participants spent their day in
+sedentary and mostly active after 7:00pm. Bellabeat should focus their
+main customer to a women, full time working, especially those who work
+sedentary.</p></li>
+<li><p>Bellabeat could provide periodic reminders for those who sits for
+prolonged periods to stand up, stretch, and engage in light exercises.
+It could also offer guidance on effective workouts.</p></li>
+<li><p>Current medical guidelines suggest that most adults should aim
+for about 10,000 steps perday. since participants walks about 7500steps
+daily on average, bellabeat should encourage users to be more active
+than usual.</p></li>
+</ol>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
